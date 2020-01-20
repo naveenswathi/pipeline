@@ -10,6 +10,6 @@ node{
    stage('Build Docker image'){
       def var = tool name: 'Docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
       def var1 = "${var}/bin/docker"
-      sh "${var1} build -t naveenswathi/my-app'
+      sh "${var1} build -t naveenswathi/my-app"
    }  
 }   
