@@ -1,2 +1,2 @@
-From pipeline
-MAINTAINER sanvar257@gmail.com
+From tomcat-8
+COPY target/*.war /usr/local/tomcat/webapps
