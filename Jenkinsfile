@@ -15,6 +15,6 @@ node{
       withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]){
          sh "docker login -u naveenswathi -p ${dockerHubPwd}"
       }  
-      sh 'dokcer push naveenswathi/my-web:2.2.0'
+      sh 'docker push naveenswathi/my-web:2.2.0'
    }  
 }   
