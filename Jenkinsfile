@@ -18,6 +18,6 @@ node{
       sh 'docker push naveenswathi/my-web:2.3.0'
    }  
    stage('Run Container'){
-      sh 'docker run -p 8010:8080 -d --name container2 naveenswathi/my-web:2.3.0'
+      sh 'docker run -p 8020:8080 -d --name container3 naveenswathi/my-web:2.3.0'
    }  
 }   
