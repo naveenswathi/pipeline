@@ -1,5 +1,5 @@
-def var = tool name: 'Docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
 node{
+   def var = tool name: 'Docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
    stage('SCM Checkout'){ 
      git 'https://github.com/naveenswathi/Pipeline.git'
    }
