@@ -1,2 +1,2 @@
-From pipeline:tomcat-8
+From consol/tomcat-8.0
 COPY target/*.jar /usr/local/tomcat/webapps
