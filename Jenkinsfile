@@ -1,5 +1,4 @@
 node{
-   def var = tool name: 'Docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
    stage('SCM Checkout'){ 
      git 'https://github.com/naveenswathi/Pipeline.git'
    }
@@ -9,9 +8,11 @@ node{
     sh "${mvnCMD} clean package"
    }  
    stage('Build Docker image'){
+      def var = tool name: 'Docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
       sh 'docker build -t naveenswathi/pipeline:2.2.0 .'
    }  
    stage('Push Docker image'){
+      def var = tool name: 'Docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
       withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
          sh "docker login -u naveenswathi -p ${dockerHubPwd}"
       }  
