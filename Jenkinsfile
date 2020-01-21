@@ -11,4 +11,10 @@ node{
       def var = tool name: 'Docker', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
       sh 'docker build -t naveenswathi/pipeline:2.2.0 .'
    }  
+   stage('Push Docker image'){
+      withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerHubPwd')]) {
+         sh "docker login -u naveenswathi -p ${dockerHubPwd}"
+      }  
+      sh 'dokcer push naveenswathi/pipeline:2.2.0'
+   }  
 }   
